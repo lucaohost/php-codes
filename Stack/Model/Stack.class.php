@@ -2,8 +2,7 @@
 class Stack {
     public static $rootElement;
 
-    public function construct()){
-    }
+    //nothing to do
 }
 
 ?>
