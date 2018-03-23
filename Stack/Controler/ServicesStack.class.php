@@ -18,7 +18,7 @@
     
         public function removeFromStack(){
             $newRoot = Stack::$rootElement->getNextElement();
-            unset($GLOBALS['$rootElement']);
+            Stack::$rootElement = null;
             Stack::$rootElement = $newRoot; 
         }
     }
