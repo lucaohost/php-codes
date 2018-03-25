@@ -8,7 +8,7 @@
             foreach($contatos as $key =>$nome){
                 $pessoas [] = new Pessoa($nome,$key);
             }
-            $conteudoExportado = "Pessoas Exportadas:<br>";
+            $conteudoExportado = "Pessoas Exportadas:<br>Código;Nome;<br>";
             foreach($pessoas as $obj){
                 $conteudoExportado .= $obj->codigo . "; " . $obj->nome . ";<br>";
             }
