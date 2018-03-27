@@ -9,4 +9,3 @@
         $exportXls = new ExportXls();
         $exportXls->exportXlsContatos();
     }
-?>
