@@ -8,7 +8,10 @@
             foreach($contatos as $key =>$nome){
                 $pessoas [] = new Pessoa($nome,$key);
             }
-            echo nl2br(json_encode($pessoas,JSON_UNESCAPED_UNICODE,JSON_PRETTY_PRINT));
+            $name = '../Data/jsonContatos.txt';
+            $file = fopen($name, 'a');
+            fwrite($file, json_encode($pessoas,JSON_UNESCAPED_UNICODE,JSON_PRETTY_PRINT));
+            fclose($file);
         }    
     }
     

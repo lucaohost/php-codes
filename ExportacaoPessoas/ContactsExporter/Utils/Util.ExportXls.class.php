@@ -10,8 +10,11 @@
             }
             $conteudoExportado = "Pessoas Exportadas:<br>Código;Nome;<br>";
             foreach($pessoas as $obj){
-                $conteudoExportado .= $obj->codigo . "; " . $obj->nome . ";<br>";
+                $conteudoExportado .= $obj->codigo . "; " . $obj->nome . ";\n";
             }
-            echo $conteudoExportado;
+            $name = '../Data/XlsContatos.csv';
+            $file = fopen($name, 'a');
+            fwrite($file, $conteudoExportado);
+            fclose($file);
         }
     }
