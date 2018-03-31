@@ -1,11 +1,17 @@
 <?php
-    require('Util.Export.Json.class.php');
-    require('Util.ExportXls.class.php');
+    require_once('Util.Export.Json.class.php');
+    require_once('Util.ExportXls.class.php');
+    require_once('Util.Exporter.class.php');
+
     if($_POST['function'] == 'exportJsonContatos'){
         $exportJson = new ExportJson();
-        $exportJson->exportJsonContatos();
+        $exportJson->exportContatos();
     }
     if($_POST['function'] == 'exportXlsContatos'){
         $exportXls = new ExportXls();
-        $exportXls->exportXlsContatos();
+        $exportXls->exportContatos();
+    }
+    if($_POST['function'] == 'deleteFile'){
+        $exportXls = new Export();
+        $exportXls->deleteFile($_POST['dir']);
     }

@@ -1,17 +1,20 @@
 <?php
     require_once('../Model/Pessoa.class.php');
-    class ExportJson{
+    require_once('Util.Exporter.class.php');
     
-        function exportJsonContatos(){
+    class ExportJson extends Export{
+        
+        //Override
+        function exportContatos(){
             require('../Data/Contatos.php');
             $pessoas = array ();
             foreach($contatos as $key =>$nome){
                 $pessoas [] = new Pessoa($nome,$key);
             }
-            $name = '../Data/jsonContatos.txt';
-            $file = fopen($name, 'a');
-            fwrite($file, json_encode($pessoas,JSON_UNESCAPED_UNICODE,JSON_PRETTY_PRINT));
-            fclose($file);
+            $name = '../Data/Contatos.json';
+            file_put_contents($name, json_encode($pessoas,JSON_UNESCAPED_UNICODE,JSON_PRETTY_PRINT));
+            //echo para virar result no ajax e mandar por post pra deletar o arquivo depos de baixado
+            echo $name;
         }    
     }
     
