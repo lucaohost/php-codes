@@ -11,7 +11,7 @@ $(function() {
                     type: "POST",
                     data: {function:'deleteFile', dir : linkToUnset},
                 });    
-            }, 10000);
+            }, 100);
     }
 
     $("#btnExportJson").click(function() {
