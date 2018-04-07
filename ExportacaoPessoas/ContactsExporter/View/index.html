@@ -9,27 +9,44 @@
 </head>
 <body>
     <div class='container'>
-        <div class="row">
-            <nav class="navbar navbar-default">
-                
-            </nav>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div id='content' class=' mt-5 mb-5'>
-                    <button class='btn btn-success' id="btnExportJson">Exportar JSON de Contatos</button>
-                </div>
-            </div>
-            <div class="col">
-            </div>
-            <div class="col">
-                <div id='content2' class=' mt-5 mb-5'>
-                    <button id="btnExportXls" class='btn btn-primary'>Exportar XLS de Contatos</button>
-                </div>
-            </div>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="https://github.com/lucaxrl" target="blank">Lucaxrl Corporations&copy;</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" id="home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Products
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#" data-url="products.html">Search</a>
+                    <a class="dropdown-item" href="#" data-url="registerProducts.html">Register</a>
+                    <a class="dropdown-item" href="#"  data-url="exportProducts.html">Export</a>
+                    </div>
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Contacts
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#" data-url="contacts.html">Search</a>
+                            <a class="dropdown-item" href="#" data-url="registerContacts.html">Register</a>
+                            <a class="dropdown-item" href="#" data-url="exportContacts.html">Export</a>
+                            </div>
+                </li>
+                </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+        </nav>
     </div>
+    <div id="content"></div>
 </body>
+<script src="../Utils/js/Pooper.js"></script>
 <script src="../Utils/js/jquery-3.2.1.min.js"></script>
 <script src="../Utils/js/bootstrap.js"></script>
 <script src="form.index.js"></script>
