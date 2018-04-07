@@ -47,10 +47,15 @@ $(function() {
     });
     
     $("#home").click(function() {
-        $('#content').html("");
+        cleanContent();
     });
 
+    function cleanContent(){
+        $('#content').html("");
+    }
+
     $(".dropdown-item").click(function() {
+        cleanContent()
         $.ajax({
             url: $(this).attr("data-url"), 
             type: "POST",
@@ -60,6 +65,4 @@ $(function() {
             }
         });
     });
-
-
 });
