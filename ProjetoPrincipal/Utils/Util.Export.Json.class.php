@@ -6,7 +6,7 @@
         
         //Override
         function exportContatos(){
-            require('../Data/Contatos.php');
+            require_once('../Data/Contatos.php');
             $pessoas = array ();
             foreach($contatos as $key =>$nome){
                 $pessoas [] = new Pessoa($nome,$key);
@@ -15,7 +15,17 @@
             file_put_contents($name, json_encode($pessoas,JSON_UNESCAPED_UNICODE,JSON_PRETTY_PRINT));
             //echo para virar result no ajax e mandar por post pra deletar o arquivo depos de baixado
             echo $name;
-        }    
+        }
+        
+        function getContacts(){
+            require_once('../Data/Contatos.php');
+            $pessoas = array ();
+            foreach($contatos as $key =>$nome){
+                $pessoas [] = new Pessoa($nome,$key);
+            }
+            $name = '../Data/Contatos.json';
+            echo json_encode($pessoas,JSON_UNESCAPED_UNICODE,JSON_PRETTY_PRINT);
+        } 
     }
     
 

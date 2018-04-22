@@ -1,6 +1,6 @@
 <?php
 $contatos = array(
-                "João Brothers",
+                "João",
                 "Lucas",
                 "Valdir",
                 "Alan",
