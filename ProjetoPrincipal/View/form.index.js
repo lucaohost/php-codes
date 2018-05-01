@@ -14,6 +14,16 @@ $(function() {
             }, 100);
     }
 
+    $("#btnLogout").click(function() {
+        $.ajax({
+            url: $(this).attr("data-url"), 
+            type: "POST",
+            success: function(result) {
+                $('body').html(result);
+            }
+        });
+    });
+
     $("#btnExportJson").click(function() {
         $.ajax({
             url: "../Utils/ajax.services.php", 
@@ -55,11 +65,11 @@ $(function() {
     }
 
     $(".dropdown-item").click(function() {
-        cleanContent()
+        cleanContent();
         $.ajax({
             url: $(this).attr("data-url"), 
             type: "POST",
-            data: {function:'exportXlsContatos'},
+            // data: {function:'exportXlsContatos'},
             success: function(result) {
                 $('#content').html(result);
             }
