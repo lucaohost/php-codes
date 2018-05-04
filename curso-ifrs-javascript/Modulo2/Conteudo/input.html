@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Input</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="input.js"></script>
+</head>
+<body>
+    <h1>Eventos de input</h1>
+    <div>
+        <form onSubmit="return submeti()">
+            <label for="name">
+                <input type="text" id='nome' onFocus='foquei()' =onBlur='saiCampo()' onSelect='selecionei()' onChange='mudei()' onKeyDown='senteiODedo()' onKeyUp='subiDedo()'>
+                <br>
+                <button type='submit'>Enviar</button>
+                <button type='reset'>Limpar</button>
+            </label>
+        </form>
+        <br>
+        <h2>Logs de input</h2>
+        <div id='log'></div>
+    </div>
+</body>
+</html>
