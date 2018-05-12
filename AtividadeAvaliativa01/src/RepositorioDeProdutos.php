@@ -39,9 +39,16 @@ class RepositorioDeProdutos{
         //ao altarar o vetor, é salvo a alteração feita na sessão
         $this->salvarAlteracoesDoVetor();
     }
-    public function atualizar(Produto $produto)
+    public function atualizar(Produto $produtoAtualizado, $codigoAntigo)
     {
-        # code...
+        foreach($this->produtos as $produto){
+            if($produto->numeroRegistro == $codigoAntigo){
+                $produto->numeroRegistro = $produtoAtualizado->numeroRegistro;
+                $produto->descricao = $produtoAtualizado->descricao;
+                break;
+            }
+        }
+        $this->salvarAlteracoesDoVetor();
     }
     public function remover( Produto $produto)
     {
