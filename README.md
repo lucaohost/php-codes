@@ -38,9 +38,7 @@ onDblClick
     da pra adicionar na tag html pra puxar
 
 input
-    nao precisa ser em tags input, sõ tipo
-    input pq se referem à entrada de dados 
-    referente a ação do usuário
+    nao precisa ser em tags input
     onBlur
     onChange
     onFocus
@@ -58,7 +56,7 @@ eventos de mouse
     onMouseMove
 
 mudar style de elementos html com js
-    tem que usar o .style.<atributo>, afinal não é um atributo natural do html, e sim do css
+    tem que usar o getElementById("exemplo").style.<atributo>, afinal não é um atributo natural do html, e sim do css
     documento.getElementById('exemplo').style.backgroundColor = 'yellow';
 
     inicial o js foi desenvolvido para validar formulario/dados a serem enviados para o servidor
@@ -75,3 +73,11 @@ js
     bota pra upper case
     toUpperCase
         pode colocar num evento de keydown ou up, que tu obriga a escrita maiuscula
+
+biblioteca: codigo que a galera já fez, pra algo facilitar um trabalho
+
+resolver botoes em form php
+
+bota name neles, e na pagina q recebe o post trata isso
+
+isser($_POST['btnEditar'])
