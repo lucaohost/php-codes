@@ -50,9 +50,15 @@ class RepositorioDeProdutos{
         }
         $this->salvarAlteracoesDoVetor();
     }
-    public function remover( Produto $produto)
+    public function remover($numeroRegistroExcluir)
     {
-        # code...
+        foreach($this->produtos as $key=>$produto){
+            if($produto->numeroRegistro == $numeroRegistroExcluir){
+                unset($this->produtos[$key]);
+                $this->salvarAlteracoesDoVetor();
+                break;
+            }
+        }
     }
     public function buscarTodos():Array
     {

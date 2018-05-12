@@ -11,7 +11,7 @@
     <title>Edição de Produto</title>
 </head>
 <body>
-    <h1>Atualize os dados do produto <?$nome - $codigo ?></h1>
+    <h1>Atualize os dados do produto <?= $_GET['descricao']?> - <?=$_GET['numero_registro']?></h1>
     <form action='pagina_editar_produto.php' method='post'>
         <input type='hidden' name='codigo_antigo' value="<?= $_GET['numero_registro']?>">
         <label> Número do Registro

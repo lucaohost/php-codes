@@ -9,8 +9,11 @@
     $produtos = $rep->buscarTodos();
     if (isset($produtos)){
     foreach ($produtos as $produto) {
-        $url = "pagina_edicao_produto.php?numero_registro=$produto->numeroRegistro&descricao=$produto->descricao";
-        echo("$produto->numeroRegistro - $produto->descricao <button><a href='$url'>Editar</a></button><br><br>
+        $dataGet = "?numero_registro=$produto->numeroRegistro&descricao=$produto->descricao";
+        echo("
+            $produto->numeroRegistro - $produto->descricao 
+            <button><a href='pagina_edicao_produto.php$dataGet'>Editar</a></button>
+            <button><a href='pagina_exclusao_produto.php$dataGet'>Excluir</a></button><br><br>
         ");
     }
 }
