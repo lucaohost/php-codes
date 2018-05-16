@@ -73,8 +73,9 @@
              * com isso, ao acessar posteriormente a classe Sessao, irá iniciar novamente
              * uma nova sessão no servidor;
              */
-            session_destroy();
-            self::$instance=null;
+            // session_destroy();
+            // self::$instance=null;]
+            unset($_SESSION['AUTENTICACAO']);
         }
     }
 ?>

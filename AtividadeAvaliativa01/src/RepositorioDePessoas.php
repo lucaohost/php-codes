@@ -2,10 +2,10 @@
 require_once("Sessao.php");
 require_once("Produto.php");
 // Classe responsável pela persistência e captura dos dados dos produtos
-class RepositorioDeProdutos{
-    private $produtos;
+class RepositorioDePessoas{
+    private $pessoas;
 
-    public function RepositorioDeProdutos(){
+    public function RepositorioDePessoas(){
         $this->carregarVetor();
     }
 
@@ -18,7 +18,7 @@ class RepositorioDeProdutos{
          * como vazio para começar a ser utilizado e salvo posteriormente.
          */ 
         $sessao = Sessao::getInstance();
-        if ($sessao->existe("VETOR_PRODUTOS_PARA_TESTES"))
+        if ($sessao->existe("VETOR_PESSOAS_PARA_TESTES"))
         {
             $this->produtos = $sessao->recuperar("VETOR_PRODUTOS_PARA_TESTES");
         }
