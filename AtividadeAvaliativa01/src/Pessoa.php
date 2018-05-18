@@ -1,7 +1,7 @@
 <?php
     //Classe que representa a pessoa
 
-    class Produto{
+    class Pessoa{
         public $nome;
         public $email;
     }

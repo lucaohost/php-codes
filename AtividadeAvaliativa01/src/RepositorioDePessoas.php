@@ -1,6 +1,6 @@
 <?php 
 require_once("Sessao.php");
-require_once("Produto.php");
+require_once("Pessoa.php");
 // Classe responsável pela persistência e captura dos dados dos produtos
 class RepositorioDePessoas{
     private $pessoas;
@@ -30,7 +30,7 @@ class RepositorioDePessoas{
     // sempre que o vetor for alterado, deve ser salvo na sessão por esse método.
     private function salvarAlteracoesDoVetor()
     {
-        Sessao::salvar("VETOR_PRODUTOS_PARA_TESTES", $this->produtos);
+        Sessao::salvar("VETOR_PESSOAS_PARA_TESTES", $this->pessoas);
     }
 
     public function adicionar(Pessoa $pessoa)
@@ -43,9 +43,8 @@ class RepositorioDePessoas{
     {
         foreach($this->pessoas as $pessoa){
             if($pessoa->nome == $nomeAntigo){
-    public function atualizar(Pessoa $pessoaAtualizada, $nomeAntigo)
                 $pessoa->nome = $pessoaAtualizada->nome;
-                $pessoa->email = $pessoaAtualizada->email;
+                $produto->email = $pessoaAtualizada->email;
                 break;
             }
         }
@@ -67,7 +66,7 @@ class RepositorioDePessoas{
          * caso não haja produtos no vetor, o retorno não é não 
          * um valor nulo mas sim, um array vazio.
         */
-        return $this->produtos;
+        return $this->pessoas;
     }
     public function buscarPorNome($nome)
     {

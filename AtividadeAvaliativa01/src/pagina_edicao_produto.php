@@ -25,9 +25,9 @@
         }
     ?>
     <form action='pagina_editar_produto.php' method='post'>
-        //Se for a primeira vez, ele assume como codigo antigo, o que está vindo da tela de produto.
-        //Caso tiver voltando de erro da pagina_editar_produto, ele assume como antigo, o primeiro de todos.
-        // Isso se faz necessário, pois a busca do produto é feito a partir do código.
+        <!-- Se for a primeira vez, ele assume como codigo antigo, o que está vindo da tela de produto.
+        Caso tiver voltando de erro da pagina_editar_produto, ele assume como antigo, o primeiro de todos.
+        Isso se faz necessário, pois a busca do produto é feito a partir do código. -->
         <?php
             if(isset($_GET['codigoAntigo'])){
                 echo "<input type='hidden' name='codigo_antigo' value='" . $_GET['codigoAntigo'] ."'>";
