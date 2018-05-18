@@ -20,10 +20,10 @@ class RepositorioDePessoas{
         $sessao = Sessao::getInstance();
         if ($sessao->existe("VETOR_PESSOAS_PARA_TESTES"))
         {
-            $this->produtos = $sessao->recuperar("VETOR_PRODUTOS_PARA_TESTES");
+            $this->pessoas = $sessao->recuperar("VETOR_PESSOAS_PARA_TESTES");
         }
         else{
-            $this->produtos = array();
+            $this->pessoas = array();
         }
     }
     // método responsável por salvar o vetor na sessão;
@@ -33,28 +33,29 @@ class RepositorioDePessoas{
         Sessao::salvar("VETOR_PRODUTOS_PARA_TESTES", $this->produtos);
     }
 
-    public function adicionar(Produto $produto)
+    public function adicionar(Pessoa $pessoa)
     {
-        $this->produtos[] = $produto;
+        $this->pessoas[] = $pessoa;
         //ao altarar o vetor, é salvo a alteração feita na sessão
         $this->salvarAlteracoesDoVetor();
     }
-    public function atualizar(Produto $produtoAtualizado, $codigoAntigo)
+    public function atualizar(Pessoa $pessoaAtualizada, $nomeAntigo)
     {
-        foreach($this->produtos as $produto){
-            if($produto->numeroRegistro == $codigoAntigo){
-                $produto->numeroRegistro = $produtoAtualizado->numeroRegistro;
-                $produto->descricao = $produtoAtualizado->descricao;
+        foreach($this->pessoas as $pessoa){
+            if($pessoa->nome == $nomeAntigo){
+    public function atualizar(Pessoa $pessoaAtualizada, $nomeAntigo)
+                $pessoa->nome = $pessoaAtualizada->nome;
+                $pessoa->email = $pessoaAtualizada->email;
                 break;
             }
         }
         $this->salvarAlteracoesDoVetor();
     }
-    public function remover($numeroRegistroExcluir)
+    public function remover($nome)
     {
-        foreach($this->produtos as $key=>$produto){
-            if($produto->numeroRegistro == $numeroRegistroExcluir){
-                unset($this->produtos[$key]);
+        foreach($this->pessoas as $key=>$pessoa){
+            if($pessoa->nome == $nomeExcluir){
+                unset($this->pessoa[$key]);
                 $this->salvarAlteracoesDoVetor();
                 break;
             }
@@ -68,35 +69,15 @@ class RepositorioDePessoas{
         */
         return $this->produtos;
     }
-    public function buscarPorNumeroRegistro($numeroRegistro)
+    public function buscarPorNome($nome)
     {
-        foreach ($this->produtos as $produto) {
-            if ($produto->numeroRegistro == $numeroRegistro)
+        foreach ($this->pessoas as $pessoa) {
+            if ($pessoa->nome == $nome)
             {
-                return $produto;
+                return $pessoa;
             }
         }
         return null;
-    }
-    public function validaNumeroRegistro($numeroRegistro){
-        $valid = true;
-        $size = strlen($numeroRegistro);
-        if($size == 6){
-            $sum = 0;
-            for($i = 0; $i < $size - 1; $i++){
-                $x = $numeroRegistro[$i];
-                $sum += $x;
-            }
-            if($numeroRegistro < 9){
-                $sum = $numeroRegistro*10;
-            }
-            if($sum % 9 != $numeroRegistro[$size-1]){
-                $valid = false;
-            }
-        }else{
-            $valid = false;
-        }
-        return $valid;
     }
 }
 ?>
