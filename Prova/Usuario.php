@@ -3,13 +3,11 @@ class Usuario{
     private $nome;
     private $idUsuario;
     private $senha;
-    private $acessos;
 
-    public function Usuario ($nome, $idUsuario, $senha, $acessos){
+    public function Usuario ($nome, $idUsuario, $senha){
         $this->nome = $nome;
         $this->senha = $senha;
         $this->idUsuario = $idUsuario;
-        $this->acessos = $acessos;
     }
 
     public function getNome(){
@@ -21,10 +19,6 @@ class Usuario{
 
     public function validarSenha(string $senha):bool{
         return $this->senha == $senha;
-    }
-
-    public function getAcessos(){
-        return $this->acessos;
     }
 }
 ?>

@@ -20,7 +20,7 @@ class RepositorioDeUsuarios{
         }
         else{
             $this->usuarios = array();
-            $user = new Usuario("Administrador", "admin", "admin");
+            $user = new Usuario("Administrador", "admin", "admin", "1111111");
             $this->usuarios[] = $user;
         }
     }

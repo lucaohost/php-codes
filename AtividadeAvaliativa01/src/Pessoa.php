@@ -4,5 +4,6 @@
     class Pessoa{
         public $nome;
         public $email;
+        public $ehUsuario;
     }
 ?>

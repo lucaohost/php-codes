@@ -9,7 +9,11 @@
     $pessoas = $rep->buscarTodos();
     if (isset($pessoas)){
     foreach ($pessoas as $pessoa) {
-        echo "<b>" . $pessoa->nome ."</b>". "-" . $pessoa->email . "<br><br>"; 
+        echo "<b>" . $pessoa->nome ."</b>". "-" . $pessoa->email;
+        if(!$pessoa->ehUsuario){
+            echo $pessoa->ehUsuario;
+            echo " - <button><a href='pagina_transformacao_usuario.php?nome=$pessoa->nome&email=$pessoa->email'>Tornar Usuário</a></button>" . "<br><br>";
+        } 
     }
 }
 ?>
