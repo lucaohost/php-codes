@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-        include_once("./include_menu.php");
+        include_once("include_menu.php");
     ?>
     <H1>Página Inicial</H1>
 </body>
