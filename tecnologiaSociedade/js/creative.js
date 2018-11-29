@@ -36,6 +36,33 @@
     window.open("https://conceito.de/tecnologia","blank");
   });
 
+  $("#music").click(function(){
+    window.open("https://conceito.de/sociedade","blank");
+  });
+  $("#users").click(function(){
+    window.open("https://www.significados.com.br/sociedade/","blank");
+  })
+  $("#img1").click(function(){
+    window.open("https://www.youtube.com/watch?v=Ursf4fZLCJQ","blank");
+  })
+  $("#img2").click(function(){
+    window.open("https://www.youtube.com/watch?v=Dv6jgzcMu0Y","blank");
+  })
+  $("#img3").click(function(){
+    window.open("https://www.youtube.com/watch?v=KP7ZH2wxDQU","blank");
+  })
+  $("#img4").click(function(){
+    window.open("https://www.netflix.com/pt/title/70264888","blank");
+  })
+  $("#img5").click(function(){
+    window.open("https://www.youtube.com/watch?v=8gefHCI_VZs","blank");
+  })
+  $("#img6").click(function(){
+    window.open("https://www.youtube.com/watch?v=QCaHi3H_lBo","blank");
+  })
+
+
+
   // Collapse Navbar
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {

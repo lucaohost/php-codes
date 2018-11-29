@@ -80,6 +80,10 @@ img::-moz-selection {
   background: transparent;
 }
 
+#ref {
+  height: 200px !important;
+}
+
 img::selection {
   color: #fff;
   background: transparent;
