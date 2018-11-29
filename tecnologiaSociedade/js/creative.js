@@ -26,6 +26,16 @@
     offset: 57
   });
 
+  $("#poll-h").click(function(){
+    window.open("https://queconceito.com.br/tecnologia");
+  });
+  $("#cogs").click(function(){
+    window.open("https://www.significados.com.br/tecnologia-2/","blank");
+  });
+  $("#tasks").click(function(){
+    window.open("https://conceito.de/tecnologia","blank");
+  });
+
   // Collapse Navbar
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
